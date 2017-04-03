@@ -43,7 +43,7 @@
 
     myTruck.printOrders(checkList.addRow.bind(checkList));
 
-    //Validation.isUsed(remoteDS);
+    Validation.isUsed(remoteDS);
     formHandler.decafHandler(Validation.isDecaf);
     //Validation.isUsed(remoteDS);
     //formHandler.addInputHandler(Validation.isCompanyEmail, remoteDS);
