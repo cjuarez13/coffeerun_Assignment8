@@ -1,4 +1,4 @@
-(function() {
+(function(window) {
     'use strict';
     var App = window.App || {};
     var $ = window.jQuery;
@@ -26,8 +26,10 @@
     Checklist.prototype.addRow = function (coffeeOrder) {
       //Remove any existing rows that match the email address
         this.removeRow(coffeeOrder.emailAddress);
+
       //Create a new instance of Row, using the coffee order info
         var rowElement = new Row(coffeeOrder);
+
       //Add the new row instance's $element property to the checklist
         this.$element.append(rowElement.$element);
     };
@@ -65,31 +67,6 @@
 
         this.$element = $div;
     }
-
-    // Checklist.prototype.addClickHandler = function (fn) {
-    //     this.$element.on('click', 'input', function (event) {
-    //         var email = event.target.value;
-    //         this.removeRow(email);
-    //         fn(email);
-    //     }.bind(this));
-    //
-    // };
-
-    // Checklist.prototype.addRow = function (coffeeOrder) {
-    //   //Remove any existing rows that match the email address
-    //     this.removeRow(coffeeOrder.emailAddress);
-    //   //Create a new instance of Row, using the coffee order info
-    //     var rowElement = new Row(coffeeOrder);
-    //   //Add the new row instance's $element property to the checklist
-    //     this.$element.append(rowElement.$element);
-    // };
-
-    // Checklist.prototype.removeRow = function (email) {
-    //     this.$element
-    //       .find('[value= "' + email + '"]')
-    //       .closest('[data-coffee-order="checkbox"]')
-    //       .remove();
-    // };
 
     App.Checklist = Checklist;
     window.App = App;

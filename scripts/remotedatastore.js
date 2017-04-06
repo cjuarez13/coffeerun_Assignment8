@@ -37,7 +37,8 @@
     };
 
     RemoteDataStore.prototype.remove = function (key) {
-        return $.ajax(this.serverUrl + '/' + key, {type: 'DELETE'});
+        return $.ajax(this.serverUrl + '/' + key, {
+            type: 'DELETE'});
     };
 
     //Exports the RemoteDataStore namespace to App namespace

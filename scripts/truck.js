@@ -21,7 +21,6 @@
         return this.db.getAll()
         .then (function (orders) {
             var customerIdArray = Object.keys(orders);
-
             console.log('Truck #' + this.truckId + ' has pending orders:');
             customerIdArray.forEach(function(id) {
                 console.log(orders[id]);
@@ -30,15 +29,6 @@
                 }
             }.bind(this));
         }.bind(this));
-    };
-
-
-    //New method to print orders and test the method
-    Truck.prototype.newOrders = function() {
-        var customerIdArray = Object.keys(this.db.getAll());
-        console.log('Truck #' + this.truckId + ' has pending orders:');
-        customerIdArray.forEach(function() {}.bind(this));
-        return customerIdArray;
     };
 
     App.Truck = Truck;
